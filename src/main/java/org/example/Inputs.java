@@ -12,15 +12,15 @@ public class Inputs extends BaseTest{
         driver.findElement(By.tagName("input")).click();
         driver.findElement(By.tagName("input")).sendKeys(Keys.ARROW_UP);
         driver.findElement(By.tagName("input")).sendKeys(Keys.ARROW_DOWN);
-        String value = driver.findElement(By.xpath("//*[@id='content']/div/div/div/input")).getAttribute("value");
+        String value = driver.findElement(By.tagName("input")).getAttribute("value");
         Assert.assertEquals(value,"0","error");
 
         driver.findElement(By.tagName("input")).sendKeys("sfdgsdg");
-        String value1 =driver.findElement(By.xpath("//*[@id='content']/div/div/div/input")).getAttribute("value");
+        String value1 =driver.findElement(By.tagName("input")).getAttribute("value");
         Assert.assertEquals(value1,"0","error");
 
         driver.findElement(By.tagName("input")).sendKeys(".");
-        String value2 =driver.findElement(By.xpath("//*[@id='content']/div/div/div/input")).getAttribute("value");
+        String value2 =driver.findElement(By.tagName("input")).getAttribute("value");
         Assert.assertEquals(value2,".","error");
     }
 }

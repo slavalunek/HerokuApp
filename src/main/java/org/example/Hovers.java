@@ -11,8 +11,8 @@ public class Hovers extends BaseTest{
     public void hoversTest(){
         driver.get("http://the-internet.herokuapp.com/hovers");
         Actions action = new Actions(driver);
-        WebElement one = driver.findElement(By.xpath("//*[@id='content']/div/div[1]/img"));
-        action.moveToElement(one).moveToElement(driver.findElement(By.xpath("//*[@id='content']/div/div[1]/div/a"))).click().perform();
+        WebElement one = driver.findElement(By.xpath("//img[@src='/img/avatar-blank.jpg']"));
+        action.moveToElement(one).moveToElement(driver.findElement(By.xpath("//a[@href='/users/1']"))).click().perform();
         String aaa = driver.findElement(By.tagName("h1")).getText();
         Assert.assertEquals(aaa,"Not Found","error");
     }
